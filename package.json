@@ -4,6 +4,7 @@
     "description": "Syntax highlighting for simple notes in Visual Studio Code",
     "version": "0.1.0",
     "publisher": "canadaduane",
+    "repository": "https://github.com/canadaduane/vscode-notes",
     "engines": {
         "vscode": "^1.10.0"
     },
