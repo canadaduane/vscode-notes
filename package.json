@@ -1,0 +1,34 @@
+{
+    "name": "notes",
+    "displayName": "Notes",
+    "description": "Syntax highlighting for simple notes in Visual Studio Code",
+    "version": "0.1.0",
+    "publisher": "canadaduane",
+    "engines": {
+        "vscode": "^1.10.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [
+            {
+                "id": "notes",
+                "aliases": [
+                    "Notes"
+                ],
+                "extensions": [
+                    ".notes"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "notes",
+                "scopeName": "source.notes",
+                "path": "./syntaxes/notes.tmLanguage"
+            }
+        ]
+    }
+}
