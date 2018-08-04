@@ -27,7 +27,7 @@
             {
                 "language": "notes",
                 "scopeName": "source.notes",
-                "path": "./syntaxes/notes.tmLanguage"
+                "path": "./syntaxes/notes.tmLanguage.json"
             }
         ]
     }
