@@ -2,7 +2,7 @@
     "name": "notes",
     "displayName": "Notes",
     "description": "Syntax highlighting for simple notes in Visual Studio Code",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "publisher": "canadaduane",
     "repository": "https://github.com/canadaduane/vscode-notes",
     "engines": {
@@ -11,6 +11,10 @@
     "categories": [
         "Programming Languages"
     ],
+    "activationEvents": [
+        "*"
+    ],
+    "main": "./vscode/extension",
     "contributes": {
         "languages": [
             {
@@ -29,6 +33,28 @@
                 "language": "notes",
                 "scopeName": "source.notes",
                 "path": "./syntaxes/notes.tmLanguage.json"
+            }
+        ],
+        "commands": [
+            {
+                "command": "notes.cycleTaskForward",
+                "title": "Task Complete (cycle)"
+            },
+            {
+                "command": "notes.cycleTaskBackward",
+                "title": "Task Complete (cycle backward)"
+            }
+        ],
+        "keybindings": [
+            {
+              "command": "notes.cycleTaskForward",
+              "key": "alt+l",
+              "when": "editorTextFocus"
+            },
+            {
+              "command": "notes.cycleTaskBackward",
+              "key": "alt+h",
+              "when": "editorTextFocus"
             }
         ]
     }

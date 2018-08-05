@@ -7,11 +7,60 @@
   "uuid": "b9bf3970-f517-46fd-a7f8-ae78fd761f84",
   "patterns": [
     {
+      "comment": "Date Header",
+      "name": "keyword.operator.notes",
+      "match": "\\[([\\d\\-]+)\\]",
+      "captures": {
+        "1": {
+          "name": "markup.heading.notes"
+        }
+      }
+    },
+    {
+      "comment": "Action Item High Priority",
+      "name": "nothing.notes",
+      "match": "\\[(\\!)\\] (.*)$",
+      "captures": {
+        "1": {
+          "name": "invalid.deprecated.notes"
+        },
+        "2": {
+          "name": "invalid.deprecated.notes"
+        }
+      }
+    },
+    {
+      "comment": "Action Item Done",
+      "name": "nothing.notes",
+      "match": "\\[(√)\\] (.*)$",
+      "captures": {
+        "1": {
+          "name": "markup.changed.notes"
+        },
+        "2": {
+          "name": "markup.changed.notes"
+        }
+      }
+    },
+    {
+      "comment": "Action Item Disabled",
+      "name": "nothing.notes",
+      "match": "\\[(x)\\] (.*)$",
+      "captures": {
+        "1": {
+          "name": "markup.canceled.notes"
+        },
+        "2": {
+          "name": "markup.canceled.notes"
+        }
+      }
+    },
+    {
       "comment": "Ordered bullets",
       "name": "keyword.operator.notes",
-      "match": "^([ \\t]*[0-9a-z]+[\\:\\.\\)]\\)?\\s(\\w+\\:)?)",
+      "match": "^[ \\t]*[0-9a-z]+[\\:\\.\\)]\\)?\\s(\\w+\\:)?",
       "captures": {
-        "2": {
+        "1": {
           "name": "keyword.other.notes"
         }
       }
@@ -19,9 +68,9 @@
     {
       "comment": "Unordered bullets",
       "name": "variable.language.notes",
-      "match": "^(\\t*[\\-\\=\\.]+\\s(\\w+\\:)?)",
+      "match": "^\\s*\\-\\s(\\w+\\:)?",
       "captures": {
-        "2": {
+        "1": {
           "name": "keyword.other.notes"
         }
       }
@@ -38,13 +87,13 @@
     },
     {
       "comment": "Headers",
-      "name": "entity.name.tag.notes",
+      "name": "markup.heading.notes",
       "match": "^([A-Z].*\\:)$"
     },
     {
       "comment": "Proper Markdown Headers",
-      "name": "entity.name.tag.notes",
-      "match": "^([-=]+\\s?\\w[\\w\\s]*[\\-=]+)"
+      "name": "markup.heading.notes",
+      "match": "^[\\-=]+\\s?\\w[\\w\\s]*[\\-=]+"
     },
     {
       "comment": "Comments",
