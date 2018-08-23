@@ -1,0 +1,14 @@
+{
+  "New Day": {
+    "prefix": "newday",
+    "description": "New Day",
+    "body": [
+      "[$CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE]",
+      "Notes:",
+      "Ideas:",
+      "TODO:",
+      "Activity Log:",
+      "$0"
+    ]
+  }
+}

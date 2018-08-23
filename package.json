@@ -45,6 +45,12 @@
                 "title": "Task Complete (cycle backward)"
             }
         ],
+        "snippets": [
+            {
+                "language": "notes",
+                "path": "./snippets/newday.json"
+            }
+        ],
         "keybindings": [
             {
               "command": "notes.cycleTaskForward",

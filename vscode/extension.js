@@ -65,6 +65,11 @@ exports.activate = async function activate(context) {
                         )
                         const newText = nextStateFn(braceMatch)
                         editBuilder.replace(range, newText)
+                    } else {
+                        editBuilder.insert(
+                            new Position(lineNo, 0),
+                            "[ ] "
+                        )
                     }
                     lineNo++
                 }

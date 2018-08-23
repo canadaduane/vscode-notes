@@ -68,7 +68,7 @@
     {
       "comment": "Unordered bullets",
       "name": "variable.language.notes",
-      "match": "^\\s*\\-\\s(\\w+\\:)?",
+      "match": "^\\s*\\-\\s([A-Z]\\w*\\:)?",
       "captures": {
         "1": {
           "name": "keyword.other.notes"
@@ -88,7 +88,7 @@
     {
       "comment": "Headers",
       "name": "markup.heading.notes",
-      "match": "^([A-Z].*\\:)$"
+      "match": "^([A-Za-z].*\\:)$"
     },
     {
       "comment": "Proper Markdown Headers",
