@@ -6,6 +6,14 @@ Syntax highlighting for simple notes based on [Sublime Text Notes](https://packa
 
 ![vscode notes sample](images/vscode-notes-sample.png)
 
+A `newday` snippet that includes the current date and the following headings:
+```
+Notes:
+Ideas:
+TODO:
+Activity Log:
+```
+
 ## Configuration
 
 You may want to configure some of the colors, for instance in your vscode settings file (`Cmd+,` on Mac OS X), you can add scopes like so:
@@ -47,6 +55,4 @@ Other scopes are language-specific.
 
 ## Release Notes
 
-### 0.1.0
-
-Initial release
+See [CHANGELOG.md](CHANGELOG.md).
