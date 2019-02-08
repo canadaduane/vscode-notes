@@ -2,7 +2,7 @@
     "name": "notes",
     "displayName": "Notes",
     "description": "Syntax highlighting for simple notes in Visual Studio Code",
-    "version": "0.3.0",
+    "version": "0.4.0",
     "publisher": "canadaduane",
     "repository": "https://github.com/canadaduane/vscode-notes",
     "engines": {
@@ -53,15 +53,20 @@
         ],
         "keybindings": [
             {
-              "command": "notes.cycleTaskForward",
-              "key": "alt+l",
-              "when": "editorTextFocus"
+                "command": "notes.cycleTaskForward",
+                "key": "cmd+l",
+                "when": "editorTextFocus"
             },
             {
-              "command": "notes.cycleTaskBackward",
-              "key": "alt+h",
-              "when": "editorTextFocus"
+                "command": "notes.cycleTaskBackward",
+                "key": "alt+l",
+                "when": "editorTextFocus"
             }
         ]
+    },
+    "__metadata": {
+        "id": "ccfb475f-3c67-45f3-a691-8588a006e64d",
+        "publisherDisplayName": "canadaduane",
+        "publisherId": "49b06e7f-44dd-4bc3-bf81-0c94b2c2c7f0"
     }
 }
