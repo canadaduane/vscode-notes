@@ -2,21 +2,31 @@
 
 ## Features
 
-Syntax highlighting for simple notes based on [Sublime Text Notes](https://packagecontrol.io/packages/Notes) by tbh1.
+Syntax highlighting for notes, with simple TODO lists. Based on [Sublime Text Notes](https://packagecontrol.io/packages/Notes) by tbh1.
 
 ![vscode notes sample](images/vscode-notes-sample.png)
 
-A `newday` snippet that includes the current date and the following headings:
+## Snippets & Commands
+
+A `newday` snippet includes the current date and a set of organizing section headings:
 ```
+[2019-02-02]
 Notes:
 Ideas:
 TODO:
 Activity Log:
 ```
 
+To add a new "TODO" item checkbox, use the `cmd+L` shortcut:
+```
+[ ] Pick up daughter after school
+```
+
+When the cursor is on a line with a TODO checkbox, subsequent `cmd+L` directives will cycle through `[√]` (done) and `[x]` (won't do).
+
 ## Configuration
 
-You may want to configure some of the colors, for instance in your vscode settings file (`Cmd+,` on Mac OS X), you can add scopes like so:
+You may want to configure some of the text colors, for instance in your vscode settings file (`Cmd+,` on Mac OS X), you can add scopes like so:
 
 ```
 "editor.tokenColorCustomizations": {
