@@ -24,7 +24,7 @@ exports.activate = async function activate(context) {
         )
     );
 
-    const linkPattern = /([^\s]+?\.notes)/g;
+    const linkPattern = /("([^"]+?\.notes)"|[^\s]+?\.notes)/g;
     const linkProvider = {
         provideDocumentLinks: async function(document, token) {
             if (workspace.rootPath === null) {
@@ -40,8 +40,11 @@ exports.activate = async function activate(context) {
                     characterDelta: -match[1].length
                 });
                 const range = new Range(linkStart, linkEnd);
+                // If inner parens match on the unquoted link text, prefer that,
+                // otherwise, use the outermost match (no parens)
+                const linkPath = match[2] ? match[2] : match[1];
                 const uri = new Uri.file(
-                    path.resolve(workspace.rootPath, match[1])
+                    path.resolve(workspace.rootPath, linkPath)
                 );
                 results.push(new DocumentLink(range, uri));
             }

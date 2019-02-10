@@ -32,6 +32,8 @@ When the cursor is on a line with a TODO checkbox, subsequent `cmd+L` directives
 
 If you mention another `*.notes` file, it will be underlined and become a link. To follow the link, use the vscode `cmd+click` standard feature.
 
+If the notes file you'd like to link to contains spaces, you can use "double quotes" to indicate the spaces should be included in the hyperlink.
+
 Cross-linking only works with files relative to the current project workspace (you must have a project/folder open for links to work).
 
 ## Configuration
