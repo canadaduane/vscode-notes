@@ -1,5 +1,16 @@
 const vscode = require("vscode");
-const { Range, Position, commands, workspace, window } = vscode;
+const path = require("path");
+const {
+    Uri,
+    Range,
+    Position,
+    DocumentLink,
+    DocumentLinkProvider,
+    commands,
+    languages,
+    workspace,
+    window
+} = vscode;
 
 exports.activate = async function activate(context) {
     context.subscriptions.push(
@@ -10,6 +21,38 @@ exports.activate = async function activate(context) {
         commands.registerTextEditorCommand(
             "notes.cycleTaskBackward",
             cycleTaskBackward
+        )
+    );
+
+    const linkPattern = /([^\s]+?\.notes)/g;
+    const linkProvider = {
+        provideDocumentLinks: async function(document, token) {
+            if (workspace.rootPath === null) {
+                // Must be in workspace for relative notes links to work
+                return [];
+            }
+            const text = document.getText();
+            const results = [];
+            let match;
+            while ((match = linkPattern.exec(text))) {
+                const linkEnd = document.positionAt(linkPattern.lastIndex);
+                const linkStart = linkEnd.translate({
+                    characterDelta: -match[1].length
+                });
+                const range = new Range(linkStart, linkEnd);
+                const uri = new Uri.file(
+                    path.resolve(workspace.rootPath, match[1])
+                );
+                results.push(new DocumentLink(range, uri));
+            }
+            return results;
+        }
+    };
+
+    context.subscriptions.push(
+        languages.registerDocumentLinkProvider(
+            { language: "notes" },
+            linkProvider
         )
     );
 
