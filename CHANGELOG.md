@@ -1,5 +1,9 @@
 # Change Log
 
+## [0.8]
+
+-   Enable relative and absolute file cross-linking. Also allow tilde (`~`) to refer to home dir.
+
 ## [0.7]
 
 -   Add icon to vscode extension. Modified from source: <a href="http://www.onlinewebfonts.com">Online Web Fonts</a>. License: CC-BY.
