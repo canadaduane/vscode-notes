@@ -1,5 +1,6 @@
 const vscode = require("vscode");
-const path = require("path");
+const os = require("os");
+const paths = require("path");
 const {
     Uri,
     Range,
@@ -24,12 +25,22 @@ exports.activate = async function activate(context) {
         )
     );
 
+    function expandPathHome(path) {
+        if (path.slice(0, 1) == "~") {
+            return paths.join(os.homedir(), path.slice(1, path.length));
+        } else {
+            return path;
+        }
+    }
+
     const linkPattern = /("([^"]+?\.notes)"|[^\s]+?\.notes)/g;
     const linkProvider = {
         provideDocumentLinks: async function(document, token) {
-            if (workspace.rootPath === null) {
-                // Must be in workspace for relative notes links to work
-                return [];
+            let relativeRoot;
+            if (document.uri.scheme === "file") {
+                relativeRoot = paths.dirname(document.uri.fsPath);
+            } else {
+                relativeRoot = null;
             }
             const text = document.getText();
             const results = [];
@@ -42,11 +53,18 @@ exports.activate = async function activate(context) {
                 const range = new Range(linkStart, linkEnd);
                 // If inner parens match on the unquoted link text, prefer that,
                 // otherwise, use the outermost match (no parens)
-                const linkPath = match[2] ? match[2] : match[1];
-                const uri = new Uri.file(
-                    path.resolve(workspace.rootPath, linkPath)
-                );
-                results.push(new DocumentLink(range, uri));
+                const linkPath = expandPathHome(match[2] ? match[2] : match[1]);
+                let linkTarget;
+                if (paths.isAbsolute(linkPath)) {
+                    linkTarget = linkPath;
+                } else if (relativeRoot) {
+                    linkTarget = paths.resolve(relativeRoot, linkPath);
+                } else {
+                    // Can't add the link if it isn't absolute, and we
+                    // don't have a relative dir path to work with
+                    continue;
+                }
+                results.push(new DocumentLink(range, new Uri.file(linkTarget)));
             }
             return results;
         }
