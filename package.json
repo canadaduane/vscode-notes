@@ -1,73 +1,73 @@
 {
-    "name": "notes",
-    "displayName": "Notes",
-    "description": "Syntax highlighting for simple notes in Visual Studio Code",
-    "icon": "images/icon.png",
-    "version": "0.8.0",
-    "publisher": "canadaduane",
-    "repository": "https://github.com/canadaduane/vscode-notes",
-    "engines": {
-        "vscode": "^1.10.0"
-    },
-    "categories": [
-        "Programming Languages"
+  "name": "notes",
+  "displayName": "Notes",
+  "description": "Syntax highlighting for simple notes in Visual Studio Code",
+  "icon": "images/icon.png",
+  "version": "0.8.1",
+  "publisher": "canadaduane",
+  "repository": "https://github.com/canadaduane/vscode-notes",
+  "engines": {
+    "vscode": "^1.10.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "activationEvents": [
+    "*"
+  ],
+  "main": "./vscode/extension",
+  "contributes": {
+    "languages": [
+      {
+        "id": "notes",
+        "aliases": [
+          "Notes"
+        ],
+        "extensions": [
+          ".notes"
+        ],
+        "configuration": "./language-configuration.json"
+      }
     ],
-    "activationEvents": [
-        "*"
+    "grammars": [
+      {
+        "language": "notes",
+        "scopeName": "source.notes",
+        "path": "./syntaxes/notes.tmLanguage.json"
+      }
     ],
-    "main": "./vscode/extension",
-    "contributes": {
-        "languages": [
-            {
-                "id": "notes",
-                "aliases": [
-                    "Notes"
-                ],
-                "extensions": [
-                    ".notes"
-                ],
-                "configuration": "./language-configuration.json"
-            }
-        ],
-        "grammars": [
-            {
-                "language": "notes",
-                "scopeName": "source.notes",
-                "path": "./syntaxes/notes.tmLanguage.json"
-            }
-        ],
-        "commands": [
-            {
-                "command": "notes.cycleTaskForward",
-                "title": "Task Complete (cycle)"
-            },
-            {
-                "command": "notes.cycleTaskBackward",
-                "title": "Task Complete (cycle backward)"
-            }
-        ],
-        "snippets": [
-            {
-                "language": "notes",
-                "path": "./snippets/newday.json"
-            }
-        ],
-        "keybindings": [
-            {
-                "command": "notes.cycleTaskForward",
-                "key": "cmd+l",
-                "when": "editorTextFocus"
-            },
-            {
-                "command": "notes.cycleTaskBackward",
-                "key": "alt+l",
-                "when": "editorTextFocus"
-            }
-        ]
-    },
-    "__metadata": {
-        "id": "ccfb475f-3c67-45f3-a691-8588a006e64d",
-        "publisherDisplayName": "canadaduane",
-        "publisherId": "49b06e7f-44dd-4bc3-bf81-0c94b2c2c7f0"
-    }
+    "commands": [
+      {
+        "command": "notes.cycleTaskForward",
+        "title": "Task Complete (cycle)"
+      },
+      {
+        "command": "notes.cycleTaskBackward",
+        "title": "Task Complete (cycle backward)"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "notes",
+        "path": "./snippets/newday.json"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "notes.cycleTaskForward",
+        "key": "cmd+l",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "notes.cycleTaskBackward",
+        "key": "alt+l",
+        "when": "editorTextFocus"
+      }
+    ]
+  },
+  "__metadata": {
+    "id": "ccfb475f-3c67-45f3-a691-8588a006e64d",
+    "publisherDisplayName": "canadaduane",
+    "publisherId": "49b06e7f-44dd-4bc3-bf81-0c94b2c2c7f0"
+  }
 }
