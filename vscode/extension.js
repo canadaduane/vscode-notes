@@ -64,7 +64,9 @@ exports.activate = async function activate(context) {
           // don't have a relative dir path to work with
           continue;
         }
-        results.push(new DocumentLink(range, new Uri.file(linkTarget)));
+        const fileUri = Uri.file(linkTarget);
+        const docLink = new DocumentLink(range, fileUri);
+        results.push(docLink);
       }
       return results;
     }
