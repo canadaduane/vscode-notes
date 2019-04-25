@@ -1,12 +1,16 @@
 # Change Log
 
-## [0.8]
+### [0.8.2]
 
-- Enable relative and absolute file cross-linking. Also allow tilde (`~`) to refer to home dir.
+- Fix minor issue with placement of `[ ]` square brackets when cursor is on a blank line.
 
 ### [0.8.1]
 
 - Fix embedded links for notes files.
+
+## [0.8]
+
+- Enable relative and absolute file cross-linking. Also allow tilde (`~`) to refer to home dir.
 
 ## [0.7]
 

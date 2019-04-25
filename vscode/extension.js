@@ -35,7 +35,7 @@ exports.activate = async function activate(context) {
 
   const linkPattern = /("([^"]+?\.notes)"|[^\s]+?\.notes)/g;
   const linkProvider = {
-    provideDocumentLinks: async function(document, token) {
+    provideDocumentLinks: async function (document, token) {
       let relativeRoot;
       if (document.uri.scheme === "file") {
         relativeRoot = paths.dirname(document.uri.fsPath);
@@ -133,7 +133,7 @@ exports.activate = async function activate(context) {
             const newText = nextStateFn(braceMatch);
             editBuilder.replace(range, newText);
           } else {
-            let insertPos = 0;
+            let insertPos = selection.active.character;
             const m2 = line.text.match(/[^\s]/);
             if (m2) {
               insertPos = line.text.indexOf(m2[0]);
