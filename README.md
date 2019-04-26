@@ -6,7 +6,7 @@ Syntax highlighting for notes, with simple TODO lists. Also allows you to cross-
 
 ![vscode notes sample](images/vscode-notes-sample.png)
 
-The example above comes from opening `examples/basic.notes` in VS Code, with the `notes` extension enabled.
+The example above comes from opening `examples/basic.notes` in VS Code, with the `notes` extension enabled and the `Dark+` default theme selected.
 
 ## Snippets & Commands
 
