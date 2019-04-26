@@ -1,5 +1,9 @@
 # Change Log
 
+### [0.9]
+
+- Update sample image in readme
+
 ### [0.8.2]
 
 - Fix minor issue with placement of `[ ]` square brackets when cursor is on a blank line.
