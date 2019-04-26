@@ -6,7 +6,7 @@ Syntax highlighting for notes, with simple TODO lists. Also allows you to cross-
 
 ![vscode notes sample](images/vscode-notes-sample.png)
 
-Syntax highlighting based on [Sublime Text Notes](https://packagecontrol.io/packages/Notes) by tbh1.
+The example above comes from opening `examples/basic.notes` in VS Code, with the `notes` extension enabled.
 
 ## Snippets & Commands
 
@@ -24,6 +24,7 @@ To add a new "TODO" item checkbox, use the `cmd+L` shortcut:
 
 ```
 [ ] Pick up daughter after school
+[√] Install VS Code `notes` extension
 ```
 
 When the cursor is on a line with a TODO checkbox, subsequent `cmd+L` directives will cycle through `[√]` (done) and `[x]` (won't do).
@@ -58,21 +59,29 @@ You may want to configure some of the text colors, for instance in your vscode s
 }
 ```
 
-Some of the scopes you can configure are as follows:
+All of the scopes you can configure are as follows:
 
 ```
-keyword.operator.notes
-keyword.other.notes
+source.notes
+markup.heading.notes
+markup.changed.notes
+markup.canceled.notes
+markup.bold.notes
 variable.language.notes
-entity.name.tag.notes
+keyword.other.notes
+keyword.operator.notes
+invalid.deprecated.notes
 comment.notes
 string.quoted.single.notes
 string.quoted.double.notes
-invalid.deprecated.notes
+string.regexp
+entity.name.tag.notes
 ```
 
-Other scopes are language-specific.
+Other scopes are language-specific. See `syntaxes/custom-colors.json` if you would like to override your theme and use the colors you see in the example image.
 
 ## Release Notes
 
 See [CHANGELOG.md](CHANGELOG.md).
+
+Syntax highlighting based on [Sublime Text Notes](https://packagecontrol.io/packages/Notes) by tbh1.

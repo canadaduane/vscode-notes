@@ -1,0 +1,77 @@
+// Place the following custom color configuration in your VS Code `settings.json` file to override
+// your editor's color theme, and use the "default colors" for the `*.notes` file type.
+
+"editor.tokenColorCustomizations": {
+  "textMateRules": [
+      {
+          // Regular text
+          "scope": "source.notes",
+          "settings": {
+              "foreground": "#d4d4d4ff"
+          }
+      },
+      {
+          // Headings
+          "scope": "markup.heading.notes",
+          "settings": {
+              "foreground": "#569cd6ff"
+          }
+      },
+      {
+          // TODO items that are DONE
+          "scope": "markup.changed.notes",
+          "settings": {
+              "foreground": "#569cd6ff"
+          }
+      },
+      {
+          // TODO items that have been CANCELED
+          "scope": "markup.canceled.notes",
+          "settings": {
+              "foreground": "#656565ff"
+          }
+      },
+      {
+          // Arrows and Tags
+          "scope": "variable.language.notes",
+          "settings": {
+              "foreground": "#92b630ff"
+          }
+      },
+      {
+          // Language Name (text inside square brackets)
+          "scope": "markup.bold.notes",
+          "settings": {
+              "foreground": "#569cd6ff"
+          }
+      },
+      {
+          // Emphasis
+          "scope": "keyword.other.notes",
+          "settings": {
+              "foreground": "#569cd6ff"
+          }
+      },
+      {
+          // Open & Closed Parentheses
+          "scope": "keyword.operator.notes",
+          "settings": {
+              "foreground": "#92b630ff"
+          }
+      },        
+      {
+          // Exclamation Mark
+          "scope": "invalid.deprecated.notes",
+          "settings": {
+              "foreground": "#f44747ff"
+          }
+      },
+      {
+          // Commented Text
+          "scope": "comment.notes",
+          "settings": {
+              "foreground": "#6a9955ff"
+          }
+      },
+  ]
+}

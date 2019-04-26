@@ -3,6 +3,9 @@
 ### [0.8.2]
 
 - Fix minor issue with placement of `[ ]` square brackets when cursor is on a blank line.
+- Add examples directory to show `*.notes` filetype capabilities.
+- Update sample image showing syntax highlighting and other features.
+- Add `syntaxes/custom-colors.json` for those who want to override their editor theme's colors use `notes` default colors.
 
 ### [0.8.1]
 

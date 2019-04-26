@@ -1,0 +1,38 @@
+Links to other.notes files. Cmd-click to open the notes in another tab.
+
+TODO:
+[ ] Create a checklist item with Cmd-L
+[√] Mark it as complete by hitting Cmd-L again
+[x] Or, cancel it out by hitting Cmd-L a third time
+
+Unordered list:
+- item 1
+- item 2
+- item 3
+- IMPORTANT: item 4
+
+Ordered list:
+1. item 1
+2. item 2
+3. item 3
+
+-= Special Heading 1 =-
+
+== Special Heading 2 ==
+
+
+[javascript]
+function() {
+  console.log("nice syntax highlighting!");
+}
+[end]
+
+Regular sentence with a #tag# and a "double quote" and `backtick quote`.
+
+---> Arrow
+===> Double Arrow
+*Emphasis* for word between asterisks.
+! Critical ! marker for something really important.
+(parenthetical syntax coloring)
+// Comment
+
