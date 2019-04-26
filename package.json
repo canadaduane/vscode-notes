@@ -3,7 +3,7 @@
   "displayName": "Notes",
   "description": "Syntax highlighting for simple notes in Visual Studio Code",
   "icon": "images/icon.png",
-  "version": "0.9.0",
+  "version": "0.9.1",
   "publisher": "canadaduane",
   "repository": "https://github.com/canadaduane/vscode-notes",
   "engines": {
