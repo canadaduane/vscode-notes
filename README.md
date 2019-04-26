@@ -4,7 +4,7 @@
 
 Syntax highlighting for notes, with simple TODO lists. Also allows you to cross-link (cmd-click) between notes.
 
-![vscode notes sample](images/vscode-notes-sample.png)
+![vscode notes sample](images/vscode-notes-sample.png | width=544)
 
 The example above comes from opening `examples/basic.notes` in VS Code, with the `notes` extension enabled and the `Dark+` default theme selected.
 
