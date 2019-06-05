@@ -58,7 +58,7 @@
     {
       "comment": "Ordered bullets",
       "name": "keyword.operator.notes",
-      "match": "^[ \\t]*[0-9a-z]+[\\:\\.\\)]\\)?\\s(\\w+\\:)?",
+      "match": "^[ \\t]*[0-9a-z]+[\\:\\.\\)]\\)?\\s([^,\\.\"'()\\[\\]]*\\:)?",
       "captures": {
         "1": {
           "name": "keyword.other.notes"
@@ -68,7 +68,7 @@
     {
       "comment": "Unordered bullets",
       "name": "variable.language.notes",
-      "match": "^\\s*\\-\\s([A-Z]\\w*\\:)?",
+      "match": "^[ \\t]*\\-\\s([^,\\.\"'()\\[\\]]*\\:)?",
       "captures": {
         "1": {
           "name": "keyword.other.notes"
@@ -111,7 +111,7 @@
       "match": "(-+>|=+>|<=+|<-+)"
     },
     {
-      "comment": "Single Quotes, as back tics",
+      "comment": "Single Quotes, as back ticks",
       "name": "string.quoted.single.notes",
       "match": "(\\`[^\\`]*\\`)"
     },
