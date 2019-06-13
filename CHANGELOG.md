@@ -1,5 +1,13 @@
 # Change Log
 
+### [0.9.3]
+
+- Fix that highlights on ordered/unordered lists should not extend beyond a single colon (':')
+
+### [0.9.2]
+
+- Allow more characters in highlighted portion before colon (':') on ordered & unordered lists
+
 ### [0.9]
 
 - Update sample image in readme

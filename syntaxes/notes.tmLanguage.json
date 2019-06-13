@@ -58,7 +58,7 @@
     {
       "comment": "Ordered bullets",
       "name": "keyword.operator.notes",
-      "match": "^[ \\t]*[0-9a-z]+[\\:\\.\\)]\\)?\\s([^,\\.\"'()\\[\\]]*\\:)?",
+      "match": "^[ \\t]*[0-9a-z]+[\\:\\.\\)]\\)?\\s([^,\\.\"'()\\[\\]:]*\\:)?",
       "captures": {
         "1": {
           "name": "keyword.other.notes"
@@ -68,7 +68,7 @@
     {
       "comment": "Unordered bullets",
       "name": "variable.language.notes",
-      "match": "^[ \\t]*\\-\\s([^,\\.\"'()\\[\\]]*\\:)?",
+      "match": "^[ \\t]*\\-\\s([^,\\.\"'()\\[\\]:]*\\:)?",
       "captures": {
         "1": {
           "name": "keyword.other.notes"
