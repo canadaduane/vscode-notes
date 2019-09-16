@@ -35,6 +35,23 @@ If you mention another `*.notes` file, it will be underlined and become a hyperl
 
 If the notes file you'd like to link to contains spaces, you can use "double quotes" to indicate the spaces should be included in the hyperlink. You can also use tilde (`~`) to mean your home directory, e.g. `~Notes/journal.notes`.
 
+
+## Configurable Links
+
+If you use shortened patterns in your notes files to refer to web pages (for example, an issue tracker has short IDs) then you can use a regular expression to teach your `notes` file what to do with it when clicked:
+
+For example, to create links to tickets on Atlassian with prefix "ABC-", you could do something like this:
+```
+[/ABC-\d+/ -> https://abc-project.atlassian.net/browse/$0]
+```
+
+Now, the following pattern will be recognized as a clickable link in your note file:
+```
+(ABC-1234)
+```
+... and clicking it will send you to `https://abc-project.atlassian.net/browse/ABC-1234`
+
+
 ## Configuration
 
 You may want to configure some of the text colors, for instance in your vscode settings file (`Cmd+,` on Mac OS X), you can add scopes like so:

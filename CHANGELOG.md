@@ -1,5 +1,15 @@
 # Change Log
 
+### [1.0.0]
+
+- Add custom outgoing links, configurable on a per-file basis
+
+  For example, to create links to tickets on Atlassian with prefix "ABC-", you could do something like this:
+  [/ABC-\d+/ -> https://abc-company.atlassian.net/browse/$0]
+
+  Now, the following pattern will be recognized as a clickable link in your note file:
+  (ABC-1234)
+
 ### [0.9.3]
 
 - Fix that highlights on ordered/unordered lists should not extend beyond a single colon (':')

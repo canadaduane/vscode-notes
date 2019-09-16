@@ -33,7 +33,14 @@ exports.activate = async function activate(context) {
     }
   }
 
+  function regexpSubstitute(text, matches) {
+    return text.replace(/\$(\d+)/g, (_, p1) => matches[parseInt(p1, 10)]);
+  }
+
   const linkPattern = /("([^"]+?\.notes)"|[^\s]+?\.notes)/g;
+  // A file can describe it's own links via this pattern, e.g.
+  //   [/\(MLG-\d+\)/ -> https://mediciventures.atlassian.net/browse/$0]
+  const externalLinkPatterns = /\[\/([^\/]+)\/\s*->\s*(https?:\/\/[^\]]+)\]/g;
   const linkProvider = {
     provideDocumentLinks: async function (document, token) {
       let relativeRoot;
@@ -43,8 +50,14 @@ exports.activate = async function activate(context) {
         relativeRoot = null;
       }
       const text = document.getText();
-      const results = [];
       let match;
+      const externalPatterns = [];
+      while ((match = externalLinkPatterns.exec(text))) {
+        externalPatterns.push({regexp: match[1], link: match[2]});
+      }
+      const results = [];
+
+      // Find "*.notes" links to other notes files in this document
       while ((match = linkPattern.exec(text))) {
         const linkEnd = document.positionAt(linkPattern.lastIndex);
         const linkStart = linkEnd.translate({
@@ -67,6 +80,21 @@ exports.activate = async function activate(context) {
         const fileUri = Uri.file(linkTarget);
         const docLink = new DocumentLink(range, fileUri);
         results.push(docLink);
+      }
+
+      // Find customized external links in this document
+      for (pattern of externalPatterns) {
+        const RE = new RegExp(pattern.regexp, "g");
+        while ((match = RE.exec(text))) {
+          const linkEnd = document.positionAt(RE.lastIndex);
+          const linkStart = linkEnd.translate({
+            characterDelta: -match[0].length
+          });
+          const range = new Range(linkStart, linkEnd);
+          const uri = Uri.parse(regexpSubstitute(pattern.link, match));
+          const docLink = new DocumentLink(range, uri);
+          results.push(docLink);
+        }
       }
       return results;
     }
