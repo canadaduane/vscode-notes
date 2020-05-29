@@ -103,7 +103,7 @@
     {
       "comment": "Emphasis",
       "name": "keyword.other.notes",
-      "match": "(\\*+[a-zA-Z \\t]+\\*+)"
+      "match": "(\\*+.*?\\*+)"
     },
     {
       "comment": "Arrows",
