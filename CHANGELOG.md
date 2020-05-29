@@ -1,5 +1,9 @@
 # Change Log
 
+### [1.0.1]
+
+- Fix emphasis so that numbers, symbols are included ("*hello '123'*") [Thanks  `h7x4ABk3g`]
+
 ### [1.0.0]
 
 - Add custom outgoing links, configurable on a per-file basis
