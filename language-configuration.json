@@ -1,4 +1,8 @@
 {
+    // allow to Toggle Line Comment
+    "comments": {
+        "lineComment": "//"
+    },
     // symbols used as brackets
     "brackets": [
         ["{", "}"],
