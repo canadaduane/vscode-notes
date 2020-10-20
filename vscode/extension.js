@@ -10,7 +10,7 @@ const {
   commands,
   languages,
   workspace,
-  window
+  window,
 } = vscode;
 
 exports.activate = async function activate(context) {
@@ -53,7 +53,7 @@ exports.activate = async function activate(context) {
       let match;
       const externalPatterns = [];
       while ((match = externalLinkPatterns.exec(text))) {
-        externalPatterns.push({regexp: match[1], link: match[2]});
+        externalPatterns.push({ regexp: match[1], link: match[2] });
       }
       const results = [];
 
@@ -61,7 +61,7 @@ exports.activate = async function activate(context) {
       while ((match = linkPattern.exec(text))) {
         const linkEnd = document.positionAt(linkPattern.lastIndex);
         const linkStart = linkEnd.translate({
-          characterDelta: -match[1].length
+          characterDelta: -match[1].length,
         });
         const range = new Range(linkStart, linkEnd);
         // If inner parens match on the unquoted link text, prefer that,
@@ -88,7 +88,7 @@ exports.activate = async function activate(context) {
         while ((match = RE.exec(text))) {
           const linkEnd = document.positionAt(RE.lastIndex);
           const linkStart = linkEnd.translate({
-            characterDelta: -match[0].length
+            characterDelta: -match[0].length,
           });
           const range = new Range(linkStart, linkEnd);
           const uri = Uri.parse(regexpSubstitute(pattern.link, match));
@@ -97,7 +97,7 @@ exports.activate = async function activate(context) {
         }
       }
       return results;
-    }
+    },
   };
 
   context.subscriptions.push(
@@ -114,8 +114,9 @@ exports.activate = async function activate(context) {
 
   const nextStateLookup = {
     "[ ]": "[√]",
-    "[√]": "[x]",
-    "[x]": "[ ]"
+    "[√]": "[!]",
+    "[!]": "[x]",
+    "[x]": "[ ]",
   };
 
   function nextTaskState(currentState) {
@@ -145,8 +146,8 @@ exports.activate = async function activate(context) {
   }
 
   function cycleTask(editor, nextStateFn) {
-    editor.edit(editBuilder => {
-      editor.selections.forEach(selection => {
+    editor.edit((editBuilder) => {
+      editor.selections.forEach((selection) => {
         let lineNo = selection.start.line;
         while (lineNo <= selection.end.line) {
           const line = editor.document.lineAt(lineNo);

@@ -19,12 +19,18 @@
     {
       "comment": "Action Item High Priority",
       "name": "nothing.notes",
-      "match": "\\[(\\!)\\] (.*)$",
+      "match": "(\\[)(\\!)(\\]) (.*)$",
       "captures": {
         "1": {
-          "name": "invalid.deprecated.notes"
+          "name": "keyword.operator.notes"
         },
         "2": {
+          "name": "invalid.deprecated.notes"
+        },
+        "3": {
+          "name": "keyword.operator.notes"
+        },
+        "4": {
           "name": "invalid.deprecated.notes"
         }
       }
@@ -32,12 +38,18 @@
     {
       "comment": "Action Item Done",
       "name": "nothing.notes",
-      "match": "\\[(√)\\] (.*)$",
+      "match": "(\\[)(√)(\\]) (.*)$",
       "captures": {
         "1": {
-          "name": "markup.changed.notes"
+          "name": "keyword.operator.notes"
         },
         "2": {
+          "name": "markup.changed.notes"
+        },
+        "3": {
+          "name": "keyword.operator.notes"
+        },
+        "4": {
           "name": "markup.changed.notes"
         }
       }
@@ -45,13 +57,38 @@
     {
       "comment": "Action Item Disabled",
       "name": "nothing.notes",
-      "match": "\\[(x)\\] (.*)$",
+      "match": "(\\[)(x)(\\]) (.*)$",
       "captures": {
         "1": {
-          "name": "markup.canceled.notes"
+          "name": "keyword.operator.notes"
         },
         "2": {
           "name": "markup.canceled.notes"
+        },
+        "3": {
+          "name": "keyword.operator.notes"
+        },
+        "4": {
+          "name": "markup.canceled.notes"
+        }
+      }
+    },
+    {
+      "comment": "Action Item Empty",
+      "name": "nothing.notes",
+      "match": "(\\[)(.)(\\]) (.*)$",
+      "captures": {
+        "1": {
+          "name": "keyword.operator.notes"
+        },
+        "2": {
+          "name": "keyword.other.notes"
+        },
+        "3": {
+          "name": "keyword.operator.notes"
+        },
+        "4": {
+          "name": "source.notes"
         }
       }
     },

@@ -1,5 +1,11 @@
 # Change Log
 
+### [1.1.0]
+
+- Add "High Priority" state (`[!]`) to TODO list cycle command (Cmd-`L`)
+- Add color to square brackets in TODO lists
+- Neutral color text for anything other than `[!]`, `[x]`, `[√]` for check lists.
+
 ### [1.0.2]
 
 - Fix that a colon in a bullet would always be considered a label/title even if inside a URL
