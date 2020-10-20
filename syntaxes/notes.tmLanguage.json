@@ -68,7 +68,7 @@
     {
       "comment": "Unordered bullets",
       "name": "variable.language.notes",
-      "match": "^[ \\t]*\\-\\s([^,\\.\"'()\\[\\]:]*\\:)?",
+      "match": "^[ \\t]*\\-\\s([^,\\.\"'()\\[\\]:]*\\:(?=[\\s]))?",
       "captures": {
         "1": {
           "name": "keyword.other.notes"
