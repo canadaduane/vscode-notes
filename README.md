@@ -97,6 +97,49 @@ entity.name.tag.notes
 
 Other scopes are language-specific. See `syntaxes/custom-colors.json` if you would like to override your theme and use the colors you see in the example image.
 
+## Supported Syntax Highlighting
+
+When adding code snippets, you can use the following language indicators after a triple-backtick to get syntax highlighting for that language:
+
+```
+actionscript|as -> source.actionscript.2
+applescript -> source.applescript
+asp|asa -> source.asp
+c -> source.c
+cs|c#|csharp -> source.cs
+c++|cpp|cc|cxx -> source.c++
+clj|clojure -> source.clojure
+css -> source.css
+di -> source.d
+erl|hrl|Emakefile|emakefile| -> source.erlang
+go|golang -> source.go
+groovy|gvy -> source.groovy
+hs|haskell -> source.haskell
+html|htm|shtml|xhtml|phtml|inc|tmpl|tpl|ctp -> text.html.basic
+java|bsh -> source.java
+js|jsx|htc|javascript -> source.js
+lua -> source.lua
+gnumakefile|makefile|makefile|ocamlmakefile|make -> source.makefile
+mdown|markdown|markdn|md -> text.html.markdown
+matlab -> source.matlab
+objective-c|objc|m|h -> source.objc
+ocaml|ml|mli -> source.ocaml
+p|pas|pascal -> source.pascal
+pm|pl|pod|t|perl -> source.perl
+php -> source.php
+cpy|py|python|rpy|pyw -> source.python
+r|s|rprofile -> source.r
+re|regex|regexp -> source.regexp
+rb|rbx|rjs|ruby|Rakefile|rake|cgi|fcgi|gemspec|irbrc|capfile|gemfile -> source.ruby
+scala -> source.scala
+sh|bash|zsh|bashrc -> source.shell
+sql|dml|ddl|mysql -> source.sql
+tcl -> source.tcl
+tex|latex|sty|cls -> text.tex
+xml|tld|jsp|pt|cpt|dtml|rss|opml -> text.xml
+yaml|yml -> source.yaml
+```
+
 ## Release Notes
 
 See [CHANGELOG.md](CHANGELOG.md).

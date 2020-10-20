@@ -1,5 +1,10 @@
 # Change Log
 
+### [1.0.2]
+
+- Fix that a colon in a bullet would always be considered a label/title even if inside a URL
+- Add section to README indicating which languages are supported for syntax highlighting
+
 ### [1.0.1]
 
 - Fix emphasis so that numbers, symbols are included ("*hello '123'*") [Thanks  `h7x4ABk3g`]
