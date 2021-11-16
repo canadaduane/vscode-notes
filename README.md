@@ -99,7 +99,7 @@ Other scopes are language-specific. See `syntaxes/custom-colors.json` if you wou
 
 ## Supported Syntax Highlighting
 
-When adding code snippets, you can use the following language indicators after a triple-backtick to get syntax highlighting for that language:
+When adding code snippets, you can use the following language indicators after a [language-tag] (square brackets necessary) to get syntax highlighting for that language:
 
 ```
 actionscript|as -> source.actionscript.2
