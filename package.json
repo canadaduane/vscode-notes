@@ -17,6 +17,20 @@
   ],
   "main": "./vscode/extension",
   "contributes": {
+    "configuration": {
+      "title": "Notes",
+      "properties": {
+        "notes.predefinedLinks.enabled": {
+          "type": "boolean",
+          "default": true
+        },
+        "notes.predefinedLinks.vals": {
+          "type": "array",
+          "default": [],
+          "description": "Configure a string to be apply to a link."
+        }
+      }
+    },
     "languages": [
       {
         "id": "notes",
