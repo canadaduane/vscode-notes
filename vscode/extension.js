@@ -49,9 +49,15 @@ exports.activate = async function activate(context) {
       } else {
         relativeRoot = null;
       }
-      const text = document.getText();
+      let text = document.getText();
       let match;
       const externalPatterns = [];
+
+      linkPatterns = vscode.workspace.getConfiguration('notes')['linkPatterns'];
+      if(linkPatterns['enabled']){
+        linkPatterns = Object.values(linkPatterns['values']).toString();
+        text += "\n" + linkPatterns;   
+      }
       while ((match = externalLinkPatterns.exec(text))) {
         externalPatterns.push({ regexp: match[1], link: match[2] });
       }

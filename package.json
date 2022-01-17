@@ -17,6 +17,27 @@
   ],
   "main": "./vscode/extension",
   "contributes": {
+    "configuration": {
+      "title": "Notes",
+      "properties": {
+        "notes.linkPatterns.enabled": {
+          "type": "boolean",
+          "default": true
+        },
+        "notes.linkPatterns.values": {
+          "type": "object",
+          "default": {},
+          "description": "A list of regex-like link patterns (e.g. [\"[/ABC-\\d+/ -> https://abc-project.atlassian.net/browse/$0]\"]) that will be applied across all your notes. Turns matching text into links.",
+          "additionalProperties": {
+            "anyOf": [
+              {
+                "type": "string"
+              }
+            ]
+          }
+        }
+      }
+    },
     "languages": [
       {
         "id": "notes",
@@ -71,3 +92,4 @@
     "publisherId": "49b06e7f-44dd-4bc3-bf81-0c94b2c2c7f0"
   }
 }
+
