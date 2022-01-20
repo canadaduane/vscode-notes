@@ -55,8 +55,8 @@ exports.activate = async function activate(context) {
 
       // use global link patterns from config
       linkPatterns = vscode.workspace.getConfiguration("notes")["linkPatterns"];
-      if (linkPatterns["enabled"]) {
-        for (let [regexp, link] of Object.entries(linkPatterns["values"])) {
+      if (linkPatterns) {
+        for (let [regexp, link] of Object.entries(linkPatterns)) {
           externalPatterns.push({ regexp, link });
         }
       }

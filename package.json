@@ -3,7 +3,7 @@
   "displayName": "Notes",
   "description": "Syntax highlighting for simple notes in Visual Studio Code",
   "icon": "images/icon.png",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "publisher": "canadaduane",
   "repository": "https://github.com/canadaduane/vscode-notes",
   "engines": {
@@ -20,14 +20,10 @@
     "configuration": {
       "title": "Notes",
       "properties": {
-        "notes.linkPatterns.enabled": {
-          "type": "boolean",
-          "default": true
-        },
-        "notes.linkPatterns.values": {
+        "notes.linkPatterns": {
           "type": "object",
           "default": {},
-          "description": "A list of regex to link patterns (e.g. Item: \"/ABC-\\d+/\"  Value: \"https://abc-project.atlassian.net/browse/$0\") that will be applied across all your notes. Turns matching text into links.",
+          "description": "A list of regex to link patterns (e.g. Item: \"ABC-\\d+\"  Value: \"https://abc-project.atlassian.net/browse/$0\") that will be applied across all your notes. Turns matching text into links.",
           "additionalProperties": {
             "anyOf": [
               {
