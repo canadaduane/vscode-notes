@@ -73,7 +73,12 @@
       {
         "command": "notes.cycleTaskForward",
         "key": "cmd+l",
-        "when": "editorTextFocus"
+        "when": "editorTextFocus && isMac"
+      },
+      {
+        "command": "notes.cycleTaskForward",
+        "key": "ctrl+l",
+        "when": "editorTextFocus && !isMac"
       },
       {
         "command": "notes.cycleTaskBackward",
@@ -88,4 +93,3 @@
     "publisherId": "49b06e7f-44dd-4bc3-bf81-0c94b2c2c7f0"
   }
 }
-
