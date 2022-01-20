@@ -2,7 +2,7 @@
 
 ## Features
 
-Syntax highlighting for notes, with simple TODO lists. Also allows you to cross-link (cmd-click) between notes.
+Syntax highlighting for notes, with simple TODO lists. Also allows you to cross-link (cmd/ctrl-click) between notes.
 
 <img src="https://github.com/canadaduane/vscode-notes/blob/master/images/vscode-notes-sample.png?raw=true" width="544">
 
@@ -51,11 +51,11 @@ Now, the following pattern will be recognized as a clickable link in your note f
 ```
 ... and clicking it will send you to `https://abc-project.atlassian.net/browse/ABC-1234`
 
-You can also add global link patterns to your config via the `notes.predefinedLinks.enabled` and `notes.predefinedLinks.vals` config keys.
+You can also add global link patterns to your config via the `notes.predefinedLinks` config key.
 
 ## Configuration
 
-You may want to configure some of the text colors, for instance in your vscode settings file (`Cmd+,` on Mac OS X), you can add scopes like so:
+You may want to configure some of the text colors, for instance in your vscode settings file, you can add scopes like so:
 
 ```
 "editor.tokenColorCustomizations": {
