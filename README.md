@@ -51,6 +51,7 @@ Now, the following pattern will be recognized as a clickable link in your note f
 ```
 ... and clicking it will send you to `https://abc-project.atlassian.net/browse/ABC-1234`
 
+You can also add global link patterns to your config via the `notes.predefinedLinks.enabled` and `notes.predefinedLinks.vals` config keys.
 
 ## Configuration
 
