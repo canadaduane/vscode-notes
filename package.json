@@ -82,8 +82,13 @@
       },
       {
         "command": "notes.cycleTaskBackward",
-        "key": "alt+l",
-        "when": "editorTextFocus"
+        "key": "cmd+shift+l",
+        "when": "editorTextFocus && isMac"
+      },
+      {
+        "command": "notes.cycleTaskBackward",
+        "key": "ctrl+shift+l",
+        "when": "editorTextFocus && !isMac"
       }
     ]
   },
