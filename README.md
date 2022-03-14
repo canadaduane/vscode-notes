@@ -20,18 +20,18 @@ TODO:
 Activity Log:
 ```
 
-To add a new "TODO" item checkbox, use the `cmd+L` shortcut:
+To add a new "TODO" item checkbox, use the `cmd/ctrl+L` shortcut:
 
 ```
 [ ] Pick up daughter after school
 [√] Install VS Code `notes` extension
 ```
 
-When the cursor is on a line with a TODO checkbox, subsequent `cmd+L` directives will cycle through `[√]` (done) and `[x]` (won't do).
+When the cursor is on a line with a TODO checkbox, subsequent `cmd/ctrl+L` directives will cycle through `[√]` (done) and `[x]` (won't do).
 
 ## Cross-linking Notes
 
-If you mention another `*.notes` file, it will be underlined and become a hyperlink: `work.notes`. To follow the link, use the vscode `cmd+click` standard feature. References to notes can be absolute or relative; if relative, they are relative to the current document.
+If you mention another `*.notes` file, it will be underlined and become a hyperlink: `work.notes`. To follow the link, use the vscode `cmd/ctrl+click` standard feature. References to notes can be absolute or relative; if relative, they are relative to the current document.
 
 If the notes file you'd like to link to contains spaces, you can use "double quotes" to indicate the spaces should be included in the hyperlink. You can also use tilde (`~`) to mean your home directory, e.g. `~Notes/journal.notes`.
 
